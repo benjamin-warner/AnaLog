@@ -1,4 +1,4 @@
-package com.nihonkaeritai.analog.Activities;
+package com.nihonkaeritai.analog.Activities.Fragments;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nihonkaeritai.analog.Activities.MainActivity">
+    tools:context="com.nihonkaeritai.analog.Activities.Fragments.MainActivity">
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"

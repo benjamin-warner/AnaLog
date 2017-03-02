@@ -1,9 +1,8 @@
-package com.nihonkaeritai.analog.Activities;
+package com.nihonkaeritai.analog.Activities.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -22,9 +21,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.nihonkaeritai.analog.Activities.Utilities.FragmentWrangler;
 import com.nihonkaeritai.analog.R;
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener{
+public class MainActivity extends FragmentWrangler implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;

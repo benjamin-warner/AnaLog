@@ -1,16 +1,16 @@
-package com.nihonkaeritai.analog.Activities;
+package com.nihonkaeritai.analog.Activities.Utilities;
 
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 
-public class FragmentWrangler {
+public class FragmentWrangler extends FragmentActivity{
 
     private FragmentManager _fragmentManager;
 
-    public FragmentWrangler(AppCompatActivity activity){
-        _fragmentManager = activity.getSupportFragmentManager();
+    public FragmentWrangler(){
+        _fragmentManager = this.getSupportFragmentManager();
     }
 
     private void swapFragment(Fragment fragment, String tag){
