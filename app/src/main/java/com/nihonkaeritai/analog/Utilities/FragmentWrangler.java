@@ -1,22 +1,34 @@
 package com.nihonkaeritai.analog.Utilities;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 
-public class FragmentWrangler extends FragmentActivity{
+public class FragmentWrangler {
 
-    private FragmentManager _fragmentManager;
+    private FragmentManager mFragmentManager;
 
-    public FragmentWrangler(){
-        _fragmentManager = this.getSupportFragmentManager();
+    public FragmentWrangler(AppCompatActivity context){
+        mFragmentManager = context.getSupportFragmentManager();
+    };
+
+    public void addServiceFragment(Fragment fragment, String tag){
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        transaction.add(fragment, tag).addToBackStack(tag).commit();
     }
 
-    private void swapFragment(Fragment fragment, String tag){
-        FragmentTransaction transaction = _fragmentManager.beginTransaction();
-        //transaction.replace(R.id.mainMenuLayout, fragment,tag);
-        transaction.addToBackStack(tag);
-        transaction.commit();
+    public void swapFragment(Fragment fragment, int layoutId, String tag){
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        transaction.replace(layoutId, fragment, tag).addToBackStack(tag).commit();
+    }
+
+    public void addUiFragment(Fragment fragment, int layoutId, String tag) {
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        transaction.add(layoutId, fragment, tag).commit();
+    }
+
+    public Fragment findFragmentByTag(String tag){
+        return mFragmentManager.findFragmentByTag(tag);
     }
 }
